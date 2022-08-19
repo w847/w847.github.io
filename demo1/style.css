@@ -1,0 +1,121 @@
+/*
+ * 
+ *    ┏┓　　　┏┓
+ *  ┏┛┻━━━┛┻┓
+ *  ┃　　　　　　　┃
+ *  ┃　　　━　　　┃
+ *  ┃　＞　　　＜　┃
+ *  ┃　　　　　　　┃
+ *  ┃...　⌒　...　┃
+ *  ┃　　　　　　　┃
+ *  ┗━┓　　　┏━┛
+ *      ┃　　　┃　
+ *      ┃　　　┃
+ *      ┃　　　┃
+ *      ┃　　　┃  神兽保佑
+ *      ┃　　　┃  代码无bug　　
+ *      ┃　　　┃
+ *      ┃　　　┗━━━┓
+ *      ┃　　　　　　　┣┓
+ *      ┃　　　　　　　┏┛
+ *      ┗┓┓┏━┳┓┏┛
+ *        ┃┫┫　┃┫┫
+ *        ┗┻┛　┗┻┛
+ */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+#canvas {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+.control {
+    position: fixed;
+    top: 0;
+    display: flex;
+    background-color: rgb(55, 165, 114);
+    right: 0;
+    height: 70px;
+    
+    width: 375px;
+    /*width: 75px;*/
+    line-height: 70px;
+    text-align: center;
+    overflow:hidden;
+}
+.control div {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 100%;
+    width: 75px;
+    display: block;
+    /*display: none;*/
+}
+.control .save {
+    background-color: rgb(58, 28, 8);
+    color: antiquewhite;
+}
+.control .watch {
+    background-color: bisque;
+    color: rgb(58, 28, 8);
+}
+.control .post {
+    background-color: rgb(253, 255, 132);
+    color: rgb(0, 0, 0);
+}
+.talk_bar {
+    background: rgba(47, 165, 233, 0.205);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 47vh;
+}
+
+.speaker {
+    position: relative;
+    left: 0;
+    min-width: 150px;
+    padding-left: 25px;
+    padding-top: 10px;
+    height: 25%;
+    /*background-color: rgb(47, 134, 211);*/
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.speaker>p {
+    font-size: 180%;
+    color: black;
+    line-height: 50px;
+}
+
+.talk_content {
+    width: 95vw;
+    min-height: 100px;
+    padding-left: 30px;
+    padding-top: 5px;
+    margin: 0 auto;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.talk_content >p {
+    
+    font-size: 20pt;
+    font-weight: 600;
+}
+.replace {
+    display: block;
+    position: fixed;
+    z-index: 10;
+    display: none;
+    width: 70vw;
+    height: 80vh;
+    background: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
