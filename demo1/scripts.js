@@ -2,7 +2,7 @@
  * @Author: error: git config user.name && git config user.email & please set dead value or install git
  * @Date: 2022-08-16 22:54:39
  * @LastEditors: error: git config user.name && git config user.email & please set dead value or install git
- * @LastEditTime: 2022-08-20 04:47:41
+ * @LastEditTime: 2022-08-20 09:46:41
  * @FilePath: \demo1\scripts.js
  * 
  */
@@ -25,8 +25,14 @@ let canvas = document.getElementById("canvas"),
     replace = document.getElementById("replace"),
     bool = false,
     bool2 = true,
-    tmpObject = "{";
+    tmpObject;
 
+    if(!localStorage.getItem("object")){
+        localStorage.setItem("object","{");
+        tmpObject = localStorage.getItem("object");
+    }else{
+        tmpObject = localStorage.getItem("object");
+    }
 // 获取输入框文本
 speaker = document.getElementById("input_speaker"),
     content = document.getElementById("input_content");
@@ -45,13 +51,8 @@ start();
 //点击canvas元素全屏
 canvas.addEventListener("click", () => { document.body.requestFullscreen() }, true);
 
-
 speaker.innerHTML = "请输入";
 content.innerHTML = "请输入";
-
-
-// 输出用户输入的内容到tmpObject
-
 
 
 
@@ -90,6 +91,7 @@ controlButton.addEventListener("click", () => {
 }, true)
 oSave.addEventListener("click", () => {
     outputJson();
+    alert("你的文件正在开始下载");
 }, true)
 oWatch.addEventListener("click", () => {
     if (bool2) {
@@ -104,10 +106,12 @@ oWatch.addEventListener("click", () => {
     }
 }, true)
 oPost.addEventListener("click", () => {
-    alert("没买域名你post你🐎呢");
+    localStorage.setItem("object",tmpObject);
+    alert("保存成功 内容："+localStorage.getItem("object"));
 }, true)
 oAdd.addEventListener("click", () => {
-    tmpObject += '"' + speaker.innerHTML + '"' + ":" + '"' + content.innerText + '"' + ",";
+    tmpObject += '"' + speaker.innerText + '"' + ":" + '"' + content.innerText + '"' + ",";
+    alert('添加完毕，添加内容有: {"'+speaker.innerText+'":"'+content.innerText+'"}');
 }, true)
 
 
